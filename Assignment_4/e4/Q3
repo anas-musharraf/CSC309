@@ -1,0 +1,17 @@
+Since $\{A_1, A_2, A_3\}$ and $\{A_1, A_3, A_4\}$  are keys, 
+any subset of attributes of relation R
+containing either of the two is going to be a superset.
+
+For the subset that contains $\{A_1, A_2, A_3\}$, we can either select or 
+not select the remaining $n-3$ attributes and hence we have $2^{n-3}$ of the 
+subsets containing it. Similarily for $\{A_1, A_3, A_4\}$ we have $2^{n-3}$ of
+subsets as well. 
+
+The overlap between those supersets are all the sets that contain both 
+$A_3$ and $A_4$ the number of such sets is $2^{n-4}$. Then to obtain the 
+total number of subsets containing the keys we need to sum up the first two
+minus the overlap since it would be double counted. 
+
+Hence we arrive at:
+
+$2^{n-3} + 2^{n-3} - 2^{n-4} = (2+ 2 -1) 2^{n-4} = 3\cdot2^{n-4}$
